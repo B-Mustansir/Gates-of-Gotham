@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Require the given module
+    var fs = require('fs');
+
+    // Use readFileSync() method
+
+    // Store the result (return value) of this
+    // method in a variable named readMe
+
+    // Keep the file in the same folder so
+    // donot need to specify the complete path
+    var readMe = fs.readFileSync('hash_link.txt', 'utf-8')
+
+    // log the content of file stored in
+    // a variable to screen
+    console.log(readMe)
+  </script>
+</html>

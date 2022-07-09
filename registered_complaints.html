@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Complaints</title>
+    <?php include 'link.php'; ?>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="reportcrime.html" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://use.fontawesome.com/602bbd89d0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet" />
+  </head>
+  <style>
+    .title {
+      font-weight: 700;
+      text-align: center;
+      font-size: 30px;
+      font-family: Vidaloka;
+      text-transform: uppercase;
+      background: linear-gradient(
+        90deg,
+        rgb(207, 202, 202),
+        #fff,
+        rgb(221, 221, 221)
+      );
+      letter-spacing: 5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      animation: shine 4s linear infinite;
+      position: relative;
+    }
+    @keyframes shine {
+      0% {
+        background-position-x: -500%;
+      }
+      100% {
+        background-position-x: 500%;
+      }
+    }
+    body {
+      background-color: #130f40;
+      background-image: linear-gradient(300deg, #393660 0%, #000000 95%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      background-position: center;
+      color: aliceblue;
+    }
+
+    nav {
+      height: 40px;
+      padding-top: 15px;
+      background-blend-mode: lighten;
+    }
+
+    nav a {
+      margin: 10px;
+      font-family: 'Source Serif 4', sans-serif;
+      padding: 10px;
+      text-decoration: none;
+      color: rgb(17, 17, 17);
+      font-size: 20px;
+
+      border-radius: 4px;
+      color: whitesmoke;
+    }
+
+    header {
+      display: flex;
+      font-size: larger;
+      border: solid;
+      height: 100px;
+      font-size: 50px;
+      align-items: center;
+      padding-left: 15px;
+      border-radius: 5px;
+    }
+
+    tr {
+      font-size: larger;
+    }
+
+    table {
+      text-align: center;
+    }
+
+    table thead {
+      font-weight: bold;
+    }
+    h1 {
+      font-weight: 700;
+      text-align: center;
+      font-size: 40px;
+      font-family: Vidaloka;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #000, #fff, #000);
+      letter-spacing: 5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      animation: shine 8s linear infinite;
+      position: relative;
+    }
+    a{
+      color: aliceblue;
+    }
+  </style>
+
+  <body>
+    <header>GATES OF GOTHAM</header>
+    <nav>
+      <a href="index1.html" class="title">Home</a>
+      <a href="about.html"  class="title">About</a>
+      <a href="login.html"  class="title" id="1">Login</a>
+      <a href="faq.html"  class="title" >FAQ</a>
+    </nav>
+    <hr />
+    <div class="main-div">
+      <h1 align="center">Registered Complaints</h1>
+      <div class="center-div">
+        <div class="table-responsive">
+          <table border="2" width="100%" cellspacing="0" bgcolor="">
+            <thead>
+              <tr height="50">
+                <th width="40px">ID</th>
+                <th width="250px">Name</th>
+                <th width="250px">Email</th>
+                <th width="200px">Aadhaar No.</th>
+                <th width="80px">Crime Location</th>
+                <th width="400px">Description</th>
+                <th width="90px">Complaint Filing Date</th>
+                <th colspan="2" width="50px">Status</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>1</td>
+              <td>Omkar Mundlik</td>
+              <td>omkarmundlik11@gmail.com</td>
+              <td>1234 1234 1234</td>
+              <td>Mumbai, Maharashtra</td>
+              <td>
+                An incident of Robbery to place in front of Palace
+                Mall,Mumbai.There were three thieves who ran away with two
+                women's purses along with some jwellery that the women were
+                wearing.
+              </td>
+              <td>20-5-2021</td>
+              <td align="center"><button class="btn1">Pending</button></td>
+              <td align="center">
+                <button class="btn2">
+                  <a href="robbery.jpg"><img src="image.png" alt="" /></a>
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Vinit Mundhada</td>
+              <td>vinitmundhada18@gmail.com</td>
+              <td>1234 1234 1234</td>
+              <td>Chennai, Maharashtra</td>
+              <td>
+                A person from my neighborhood has gone missing from last 3 days.
+                I suspect that he has been kidnapped or murdered. Neighbours are
+                not reporting the crime due to lack of financial stability and
+                negligence from local police station.
+              </td>
+              <td>20-5-2021</td>
+              <td align="center"><button class="btn1">Pending</button></td>
+              <td align="center">
+                <button class="btn2">
+                  <a href="missing_person.jpeg">
+                    <img src="image.png" alt="" />
+                  </a>
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Hetan Nandre</td>
+              <td>hetannandre69@gmail.com</td>
+              <td>1234 1234 1234</td>
+              <td>Pune, Maharashtra</td>
+              <td>
+                I have witnessed some ragging incidences in college. What
+                happened the other day in the school was not reported as case of
+                ragging. In fact, other students have told me that it is a
+                common practice in the school for the seniors to slap and beat
+                up the juniors, every now and then. It has become a habit for
+                the seniors now. The seniors threaten the juniors with severe
+                punishment if they complain to the teachers or parents.
+              </td>
+              <td>20-5-2021</td>
+              <td align="center"><button class="btn1">Pending</button></td>
+              <td align="center">
+                <button class="btn2">
+                  <a href="ragging.jpg"><img src="image.png" alt="" /></a>
+                </button>
+              </td>
+            </tr>
+
+          </table>
+
+          <table border="2" width="100%" cellspacing="0" bgcolor="">
+            <tr>
+              <td>
+                <a href="https://ipfs.moralis.io:2053/ipfs/QmfGeZ7K2Msx2CpkdH5W9JHzcRHWKz35PBKHvED85rGPJp">https://ipfs.moralis.io:2053/ipfs/QmfGeZ7K2Msx2CpkdH5W9JHzcRHWKz35PBKHvED85rGPJp</a>
+                <a href=""><script src="reportcrime.html">document.write(hash);</script></a>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>
