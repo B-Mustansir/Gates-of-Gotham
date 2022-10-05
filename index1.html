@@ -14,6 +14,10 @@
     <title>GATES OF GOTHAM</title>
   </head>
   <style>
+    /* *{
+      margin: 0px;
+      padding: 0px;
+    } */
     h1 {
       margin: 20px;
       text-align: center;
@@ -21,6 +25,7 @@
       font-size: 40%;
       font-family: Vidaloka;
       border-radius: 20px;
+      padding: 15px;
     }
     a {
       font-weight: 700;
@@ -118,15 +123,15 @@
       color: aliceblue;
     }
 
-    nav {
+    nav {display: flex;
       height: 60px;
-      margin-top: 20px;
+  
       background-blend-mode: lighten;
       border: solid white;
       margin: 20px;
-      padding-top: 10px;
+     
       vertical-align: middle;
-      text-align: center;
+      padding: 15px;
       border-radius: 20px;
     }
 
@@ -134,7 +139,7 @@
       color: whitesmoke;
     }
 
-    a {
+    nav a {
       margin: 10px;
       font-family: Arima;
       font-style: bold;
@@ -145,14 +150,14 @@
       border-radius: 4px;
       border-radius: 20px;
     }
-    :hover {
+    /* :hover {
       scale: 1.1;
-    }
+    } */
 
     footer {
       padding: 20px;
       margin-bottom: 0%;
-      margin-top: 15%;
+      margin-top: 5%;
       display: flex;
       background-color: azure;
       width: 100%;
@@ -169,17 +174,16 @@
 
     .div1 {
       border: solid;
-      height: 750px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 20px;
       border-radius: 20px;
+      padding: 15px;
     }
 
     .div2 {
       border: solid;
-      height: 500px;
       display: flex;
       align-items: center;
       border-radius: 20px;
@@ -194,27 +198,23 @@
       text-align: center;
     }
 
-    .div2 a {
-      color: aliceblue;
-      border: solid;
-      border-radius: 20px;
-      font-size: 40px;
-      margin-left: 400px;
-    }
+    
 
     .title1 {
       display: flex;
-      width: 210%;
+      width: 100%;
       align-content: center;
       justify-content: center;
+      margin: auto;
+
     }
 
     .intro {
       text-align: justify;
       animation: fadeIn 7s;
       font-size: 25px;
-      width: 150%;
-      margin-right: 100px;
+      width: 95%;
+      margin-right: auto;
       padding: 20px;
       border-radius: 20px;
     }
@@ -226,9 +226,9 @@
         opacity: 1;
       }
     }
-    .nav2 a:hover {
+    /* .nav2 a:hover {
       color: aqua;
-    }
+    } */
 
     footer {
       color: black;
@@ -313,22 +313,44 @@
     span {
       font-size: large;
     }
-    p:hover {
+    /* p:hover {
       scale: 1.2;
-    }
+    } */
 
     .small_text {
       font-family: sans-serif;
     }
 
-    intro:hover {
+    /* intro:hover {
       scale: 1.2;
+    } */
+   
+    .container{
+      width: 70%;
+      margin: auto;
     }
-
+@media (max-width:800px) {
+  nav,.div1,.div2,footer{
+    flex-direction: column;
+    
+  }
+  
+}
     .crime{
+      border: solid;
+      border-radius: 10px;
+      border-color: #d6d6f0;
       padding: 20px;
+      margin-left: 10%;
       font-family: Vidaloka;
     }
+    nav{
+      text-align: center;
+    }
+    /* .animation{
+      font-size: ;
+    } */
+
 
   </style>
 
@@ -339,17 +361,17 @@
       </div>
       <!-- <div class="block-reveal" style="--bc: #bf4060; --d: .5s">Revealing Effect</div> -->
     </h1>
-    <nav>
+    <nav><div class="container">
       <a href="index1.html" class="title">Home</a>
       <a href="about.html">About</a>
       <a href="login.html" id="1">Login</a>
-      <a href="faq.html">FAQ</a>
+      <a href="faq.html">FAQ</a></div>
     </nav>
     <div class="div1">
       <div class="title1">
         <h1 class="animation">
           <span class="small_text">Gates of</span>
-          GOTHAM
+          <br>GOTHAM <br>
           <span class="small_text">are open</span>
         </h1>
         <!-- <img src="gotham_image2.jpg" alt="" width="850px"> -->
@@ -388,7 +410,7 @@
         <br />
         We will keep you anonymous.
       </div>
-      <div class="report"><a class="crime" href="reportcrime.html">Report a Crime</a></div>
+      <a class="crime" href="http://localhost/gatesofgotham/reportcrime.php">Report a Crime</a>
     </div>
     <!-- <a href="reportcrime.html">Report a Crime</a> -->
     <footer>

@@ -1,4 +1,4 @@
-<?php include("conn.php")?>
+<?php include("conn.php")  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Crime</title>
-    <link rel="javascript" href="cp.js">
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
 </head>
 <style>
     body {
-        background-image: url(gotham_image.jpg);
+        background-color: black;
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
@@ -54,7 +53,7 @@
         font-family: 'Source Serif 4', sans-serif;
         padding: 10px;
         text-decoration: none;
-        color:rgb(255, 255, 255);
+        color: rgb(17, 17, 17);
         font-size: 20px;
 
         border-radius: 4px;
@@ -127,11 +126,10 @@
         height: fit-content;
         margin-top: 150px;
     }
-    
 </style>
 
 <body>
-    <header>GATES OF GOTHEM</header>
+    <header>GATES OF GOTHAM</header>
     <nav>
         <a href="index.html" class="title">Home</a>
         <a href="about.html">About</a>
@@ -144,109 +142,81 @@
     <button id="btn-login" onclick=login()>login</button>
     <div class="form1">
         <img src="image-removebg-preview.png" alt="">
-        <!-- <form action=""> --> <div class="form">
+        <!-- <form action=""> -->
+        <div class="form">
             Name:
             <br>
             <input type="text" placeholder="Enter your Name" required name="name" id="name">
-            <!-- <br>
-            Email id:
-            <br>
-            <input type="text" placeholder="Enter your Email" required name="email" id="email">
-            <br>
-            Age:
-            <br>
-            <input type="text" placeholder="Enter your Age" required name="age" id="age">
-            <br>
-            Gender:
-            <br>
-            <!-- <select name="gender" id="M/F"> -->
-                <!-- <option value="male">male</option>
-                <option value="female">female</option>
-                <option value="other">other</option>
-            <!-- </select> --> -->
-            <!-- <br><br>
-            Contact Number:
-            <br>
-            <input type="text" placeholder="Enter your  Mobile Number" required name="contact" id="contact">
-            <br>
-            Aadhar Number:
-            <br>
-            <input type="text" placeholder="Enter your Aadhar Number" required name="aadhar" id="aadhar">
-            <br>
-            Location of crime:
-            <br>
-            <input type="text" placeholder="Enter Location of crime " required name="location" id="location">
-            <br>
-            Description : -->
-            <!-- <br> -->
-            <!-- <textarea name="" id="" cols="30" rows="10" placeholder="Describe CRIME here" required name="description" id="description"></textarea> -->
-            <br>
-            <!-- <input type="submit" value="Submit" onclick="submit"> -->
-            <br>
-            <!-- <input type="reset" value="Reset">
-        <br> --> -->
-        <button onclick=asif(y) type="submit" name="submit">Submit</button>
-        <!-- </form> --></div>
+
+
+            <button onclick=asif() name="submit">Submit</button>
+            <!-- </form> -->
+        </div>
     </div>
-
-    <a id="x">click</a>
-    <embed id="embed">
 </body>
-<script>
-    var hash;
-Moralis.initialize("vnwfK8neMxiH5D3VCZUUCZbT42GuHZ5Ykuezkj78");
-Moralis.serverURL="https://dtw3vvtqurby.usemoralis.com:2053/server";
+<script>var hash;
+var ak;
+    Moralis.initialize("vnwfK8neMxiH5D3VCZUUCZbT42GuHZ5Ykuezkj78");
+    Moralis.serverURL = "https://dtw3vvtqurby.usemoralis.com:2053/server";
 
-Moralis.Web3.authenticate().then(function(){
-    console.log(user.get('ethAdress'));
-})
+    Moralis.Web3.authenticate().then(function() {
+        console.log(user.get('ethAdress'));
+    })
 
-login=async()=>{
-    Moralis.Web3.authenticate().then(function(user){
-        console.log('logged in')
-})}
+    login = async () => {
+        Moralis.Web3.authenticate().then(function(user) {
+            console.log('logged in')
+        })
+    }
 
- uploadMetadata= async() => {
-    const name=document.getElementById("name").value;
-   /* const email=document.getElementById("email").value;
-    const age=document.getElementById("age").value;
-    const contact=document.getElementById("contact").value;
-    const aadhar=document.getElementById("aadhar").value;
-    const location=document.getElementById("location").value;
-    //const description=document.getElementById("description").value;*/
+    uploadMetadata = async () => {
+        const name = document.getElementById("name").value;
 
- 
-const metadata={
-    "name":name,
-   /* "email":email,
-    "age":age,
-    "contact":contact,
-    "aadhar":aadhar,
-    "location":location,*/
-    //"description":description
 
-}
-const file= new Moralis.File("file.json",{base64:btoa(JSON.stringify(metadata))});
-await file.saveIPFS();
-hash1=file.ipfs();
-console.log(hash1);
-}
-y=uploadMetadata()
-asif= async()=>{
-    await uploadMetadata()
-    <?php
-$hash1="<script>document.write(hash1);</script>";
-$query="insert into reportcrime (hash) values('$hash1')";
-$data=mysqli_query($connection,$query) ;
-if($data){
-    echo "Data saved";
-}else{
-    echo "Failed to save";
-}
- 
- ?>
+
+        const metadata = {
+            "name": name,
+
+        }
+        const file = new Moralis.File("file.json", {
+            base64: btoa(JSON.stringify(metadata))
+        });
+        await file.saveIPFS();
+        hashy = file.ipfs();
+        console.log(hashy);
+        // Creating a cookie after the document is ready
+        function createCookie(name, value, days) {
+    var expires;
+      
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+      
+    document.cookie = escape(name) + "=" + 
+        escape(value) + expires + "; path=/";
 }
 
+    createCookie("gfg", hashy, "10");
+;
+   
+// Function to create the cookie
+
+
+    }
+    asif = async () => {
+        await uploadMetadata();
+    }
+    
 </script>
-
+<?php
+    echo $_COOKIE["gfg"];
+    $hash1=$_COOKIE["gfg"];
+    $query = "insert into reportcrime (hash) values('$hash1')";
+    $data = mysqli_query($connection, $query);
+?>
 </html>
